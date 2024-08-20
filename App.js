@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import HomePage from './Homepage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -8,10 +8,21 @@ import Lab3 from './Lab3';
 import Pc from './pc';
 import Register from './Register'
 import Dashboard from './Dashboard';
+import './App.css';
+
 
 export default function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div>
+    <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
+      <button onClick={toggleTheme}>
+        {isDarkMode ? 'Light' : 'Dark'}
+      </button>
       <Router>
         <Routes>
           <Route exact path="/" element={<LoginForm />} />

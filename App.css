@@ -1,0 +1,20 @@
+/* App.css */
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+button {
+    cursor: pointer;
+}
+
+html,
+body {
+    margin: 0%;
+}
