@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import uptec from './uptec.png';
-import './Login.css';
+
 
 
 export default function Login() {
