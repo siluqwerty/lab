@@ -249,4 +249,48 @@ a {
     margin-left: 100px;
 }
 
-/* pc.css */
+/* register.css */
+.regBtn {
+    margin-top: 30px;
+}
+
+.regBtn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    /* Gradient background */
+    border: none;
+    /* Remove default border */
+    color: white;
+    /* White text color */
+    padding: 12px 24px;
+    /* Padding around the text */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    text-transform: uppercase;
+    /* Uppercase text */
+    border-radius: 30px;
+    /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.regBtn:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    /* Reverse gradient on hover */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+    /* Slightly larger shadow on hover */
+    transform: translateY(-2px);
+    /* Lift button slightly on hover */
+}
+
+.regBtn:active {
+    transform: translateY(1px);
+    /* Button depresses slightly when clicked */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    /* Reduced shadow on click */
+}
