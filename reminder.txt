@@ -1,0 +1,12 @@
+
+Feature: Create an admin dashboard where the admin can view all bookings, manage slot availability, and track maintenance issues.
+
+Feature: Implement user authentication to allow only registered users (students, faculty, admin) to book slots or report issues. make registration form
+
+6. Feedback System:
+Feature: Allow users to give feedback on the lab sessions or report issues they faced during their booked slot.
+16. Database Integration:
+Feature: Integrate with a backend database (e.g., MongoDB, MySQL) to store user data, bookings, and reports persistently.
+Feature: Allow users to choose different themes or customize the appearance of the app.dark mode
+ Inventory Management:
+Feature: Track and manage hardware/software inventory in the lab. Admins can update system statuses (e.g., in use, under maintenance, available).
