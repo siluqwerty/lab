@@ -55,13 +55,16 @@ export default function Login() {
                 <th><button className="login" onClick={Loginset}>LOGIN</button></th>
               </tr>
             </table>
+            <div className="regbtn"><button onClick={registernav}>REGISTER</button></div>
           </form>
-          <div className="forget"><button onClick={registernav}>REGISTER</button></div>
+
         </div>
-        <div className="uptec">
-          <a href="http://www.uptecnet.com">Click here to go <font size="5" color="blue">UPTEC</font> website</a>
-        </div>
+        <center>
+          <h4 className='uptecanchor'>Click here to go<a href="http://www.uptecnet.com"><font size="5">UPTEC</font> </a> website</h4>
+        </center>
+
       </div>
-    </div>
+    </div >
+
   );
 }

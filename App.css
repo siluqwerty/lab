@@ -1,12 +1,18 @@
 /* App.css */
 .light-mode {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #FAD961;
+    background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+
+
+    color: #0a0808;
 
 }
 
 .dark-mode {
-    background-color: #121212;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+
     color: #ffffff;
 }
 
@@ -23,6 +29,7 @@ body {
 .container {
     display: flex;
     justify-content: space-evenly;
+
 }
 
 .card1,
@@ -54,6 +61,7 @@ body {
     visibility: hidden;
 }
 
+
 .btn {
     height: 50px;
     width: 150px;
@@ -64,33 +72,29 @@ body {
     background-repeat: no-repeat;
 }
 
-
+/*login.css*/
 
 .body1 {
-    height: 600px;
+    height: 500px;
     width: 500px;
-    background-image: url(lab.jpg);
+    background-image: url(lab.png);
 
     background-size: cover;
     background-position: center;
     float: left;
-    align-items: center;
-    margin-top: 10px;
-    margin-left: 150px;
-    box-shadow: 0px 20px 10px rgb(0, 0, 0);
+
+
+
+
+}
+
+.regbtn {
+    margin-left: 600px;
+    margin-top: 40px;
 }
 
 
-.body2 {
-    height: 600px;
-    width: 500px;
-    background: rgba(2, 24, 26, 0.993);
-    float: left;
-    align-items: center;
-    margin-top: 10px;
-    box-shadow: 20px 20px 10px rgb(0, 0, 0);
 
-}
 
 .upteclogo {
     width: 300px;
@@ -127,54 +131,10 @@ body {
 
 .input:hover {
     border-color: blue;
-    animation: vibe 2s ease-in-out 1;
+
 }
 
-@keyframes vibe {
-    0% {
-        transform: rotate(0deg);
-    }
 
-    10% {
-        transform: rotate(2deg);
-    }
-
-    20% {
-        transform: rotate(-2deg);
-    }
-
-    30% {
-        transform: rotate(5deg);
-    }
-
-    40% {
-        transform: rotate(-5deg);
-    }
-
-    50% {
-        transform: rotate(7deg);
-    }
-
-    60% {
-        transform: rotate(-7deg);
-    }
-
-    70% {
-        transform: rotate(05deg);
-    }
-
-    80% {
-        transform: rotate(-02deg);
-    }
-
-    90% {
-        transform: rotate(2deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
 
 .login {
     height: 30px;
@@ -183,76 +143,25 @@ body {
     background-color: rgb(44, 43, 43);
 }
 
-.login:hover {
-    animation: swing 2s ease-in-out 1;
-}
 
-@keyframes swing {
-    0% {
-        transform: rotate(0deg);
-    }
 
-    10% {
-        transform: rotate(10deg);
-    }
-
-    20% {
-        transform: rotate(-10deg);
-    }
-
-    30% {
-        transform: rotate(20deg);
-    }
-
-    40% {
-        transform: rotate(-20deg);
-    }
-
-    50% {
-        transform: rotate(10deg);
-    }
-
-    60% {
-        transform: rotate(-10deg);
-    }
-
-    70% {
-        transform: rotate(20deg);
-    }
-
-    80% {
-        transform: rotate(-10deg);
-    }
-
-    90% {
-        transform: rotate(10deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.forget {
-    height: 30px;
-    width: 100px;
-    margin-left: 300px;
-}
 
 a {
     text-decoration: none;
-    color: white;
+
+
 }
 
-.uptec {
-    margin-top: 50px;
-    margin-left: 100px;
-}
-
-/* register.css */
 .regBtn {
     margin-top: 30px;
 }
+
+.uptecanchor {
+    margin-top: 50px;
+}
+
+/* register.css */
+
 
 .regBtn {
     background: linear-gradient(135deg, #6a11cb, #2575fc);

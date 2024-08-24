@@ -22,10 +22,11 @@ export default function Homepage() {
     <div>
       <button onClick={dashboard}>Go To Dashboard</button>
       <Header />
+      <center> <h3>Select lab to manage</h3></center>
       <div className='container'>
-        <div className='card1'><button onClick={lab1}>lab no.1</button></div>
-        <div className='card2'><button onClick={lab2}>lab no.2</button></div>
-        <div className='card3'><button onClick={lab3}>lab no.3</button></div>
+        <button className='card1' onClick={lab1}><h2>Lab no.1</h2></button>
+        <button className='card2' onClick={lab2}><h2>Lab no.2</h2></button>
+        <button className='card3' onClick={lab3}><h2>Lab no.3</h2></button>
 
       </div>
     </div>
