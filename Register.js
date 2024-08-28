@@ -16,10 +16,11 @@ export default function Register() {
                             <td><h3>Mob. No.</h3><input type='number' /></td>
                             <td><h3>Adhar No.</h3><input type='number' /></td>
                             <td><h3>Select Course ID</h3><select>
-                                <option>01FWD:Full Stack Web Development</option>
-                                <option>02PHP:Hypertext Preprocessor</option>
-                                <option>03PY:Python</option>
-                                <option>04JS:Java Script</option>
+                                <option>course ID</option>
+                                <option><li>01FWD:Full Stack Web Development</li></option>
+                                <option><li>02PHP:Hypertext Preprocessor</li></option>
+                                <option><li>03PY:Python</li></option>
+                                <option><li>04JS:Java Script</li></option>
                             </select></td>
                         </tr>
                         <tr>

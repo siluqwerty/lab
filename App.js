@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
-      <button onClick={toggleTheme}>
+      <button className='themeBtn' onClick={toggleTheme}>
         {isDarkMode ? 'Light' : 'Dark'}
       </button>
       <Router>

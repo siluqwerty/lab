@@ -20,13 +20,13 @@ export default function Homepage() {
   }
   return (
     <div>
-      <button onClick={dashboard}>Go To Dashboard</button>
       <Header />
-      <center> <h3>Select lab to manage</h3></center>
+      <button className='dashBtn' onClick={dashboard}>Go To Dashboard</button>
+      <center> <h3 className='homeHeading'>Select lab to manage</h3></center>
       <div className='container'>
-        <button className='card1' onClick={lab1}><h2>Lab no.1</h2></button>
-        <button className='card2' onClick={lab2}><h2>Lab no.2</h2></button>
-        <button className='card3' onClick={lab3}><h2>Lab no.3</h2></button>
+        <button className='labBtn' onClick={lab1}><div className='doorplate'><h2 className='labnumb'>Lab 1</h2></div><div className='nophone'></div></button>
+        <button className='labBtn' onClick={lab2}><div className='doorplate'><h2 className='labnumb'>Lab 2</h2></div><div className='nophone'></div></button>
+        <button className='labBtn' onClick={lab3}><div className='doorplate'><h2 className='labnumb'>Lab 3</h2></div><div className='nophone'></div></button>
 
       </div>
     </div>

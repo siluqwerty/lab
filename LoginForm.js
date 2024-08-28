@@ -53,9 +53,10 @@ export default function Login() {
               </tr>
               <tr>
                 <th><button className="login" onClick={Loginset}>LOGIN</button></th>
+                <th align='right'><button className='regbtn' onClick={registernav}>REGISTER</button></th>
               </tr>
             </table>
-            <div className="regbtn"><button onClick={registernav}>REGISTER</button></div>
+
           </form>
 
         </div>
