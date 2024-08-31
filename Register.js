@@ -5,7 +5,6 @@ export default function Register() {
     return (
         <div>
             <Header />
-
             <center>
                 <h2>Registration Form</h2>
                 <form>

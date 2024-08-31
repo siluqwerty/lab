@@ -16,31 +16,31 @@ export default function Lab2() {
 
         <tr>
           <td className='cell'><button className='btn' onClick={pc}></button> </td>
-          <td className='cell'><button className='btn'></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
           <td className='cell gayab'> </td>
-          <td className='cell'><button className='btn'></button> </td>
-          <td className='cell'><button className='btn'></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
         </tr>
         <tr>
-          <td className='cell'><button className='btn'></button> </td>
-          <td className='cell'><button className='btn'></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
           <td className='cell gayab'> </td>
-          <td className='cell'><button className='btn'></button> </td>
-          <td className='cell'><button className='btn'></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
         </tr>
         <tr>
-          <td className='cell'><button className='btn'></button></td>
-          <td className='cell'><button className='btn'></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button></td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
           <td className='cell gayab'> 3</td>
-          <td className='cell'><button className='btn'></button> </td>
-          <td className='cell'><button className='btn'></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
         </tr>
         <tr>
-          <td className='cell'><button className='btn'></button> </td>
-          <td className='cell'><button className='btn'></button></td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button></td>
           <td className='cell gayab'> 3</td>
-          <td className='cell'><button className='btn'></button> </td>
-          <td className='cell'><button className='btn'></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
+          <td className='cell'><button className='btn' onClick={pc}></button> </td>
         </tr>
       </table>
 
