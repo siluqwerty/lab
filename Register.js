@@ -5,8 +5,8 @@ import axios from 'axios';
 
 export default function Register() {
     const [formData, setFormData] = useState({
-        fname: '',
-        lname: '',
+        name: '',
+        password: '',
         mob: '',
         adhar: '',
         courseid: '',
@@ -47,8 +47,8 @@ export default function Register() {
                 <form onSubmit={handleSubmit}>
                     <table>
                         <tr>
-                            <td><h3>First Name</h3><input type='text' name="fname" onChange={handleChange} value={formData.fname} /></td>
-                            <td><h3>Last Name</h3><input type='text' name="lname" onChange={handleChange} value={formData.lname} /></td>
+                            <td><h3> Name</h3><input type='text' name="name" onChange={handleChange} value={formData.name} /></td>
+                            <td><h3>Set Password</h3><input type='text' name="password" onChange={handleChange} value={formData.password} /></td>
                             <td><h3>Mob. No.</h3><input type='number' name="mob" onChange={handleChange} value={formData.mob} /></td>
                             <td><h3>Adhar No.</h3><input type='number' name="adhar" onChange={handleChange} value={formData.adhar} /></td>
                             <td><h3>Select Course ID</h3><select name="courseid" onChange={handleChange} value={formData.courseid}>

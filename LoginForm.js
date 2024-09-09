@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import uptec from './uptec.png';
-
-
+import axios from 'axios';
 
 export default function Login() {
-  const [id, setId] = useState();
+  const [name, setName] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
   const Loginset = (e) => {
     e.preventDefault();
-    if (id === '123' && password === '123') {
-      navigate('/home');
-    }
-    else {
-      alert('wrong id or password');
-    }
-  }
-
+    axios.post('http://localhost:5000/login', {
+      name,
+      password,
+    })
+      .then((response) => {
+        if (response.data === 'Login successful') {
+          alert('Login successful');
+          navigate('/home');
+        } else {
+          alert('Invalid credentials');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Error during login. Please try again.');
+      });
+  };
   const registernav = () => {
     navigate('/register');
   }
@@ -44,8 +52,8 @@ export default function Login() {
           <form>
             <table cellspacing="20px" align="center">
               <tr>
-                <th>UPTEC ID</th>
-                <th><input type="text" value={id} className="input" onChange={(e) => setId(e.target.value)} /></th>
+                <th>Name</th>
+                <th><input type="text" value={name} className="input" onChange={(e) => setName(e.target.value)} /></th>
               </tr>
               <tr>
                 <th>Password</th>
