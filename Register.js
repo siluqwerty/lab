@@ -1,20 +1,57 @@
 import React from 'react';
 import Header from './Header';
+import { useState } from 'react';
+import axios from 'axios';
 
 export default function Register() {
+    const [formData, setFormData] = useState({
+        fname: '',
+        lname: '',
+        mob: '',
+        adhar: '',
+        courseid: '',
+        schoolname: '',
+        schoolboard: '',
+        schoolpass: '',
+        institutename: '',
+        institutecourse: '',
+        institutepass: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        axios.post('http://localhost:5000/api/signup', formData)
+            .then((response) => {
+                if (response.status === 200) {
+                    console.log('User signed up successfully');
+                }
+            })
+            .catch((error) => {
+                console.error('Error during sign up:', error.response ? error.response.data : error.message);
+            });
+    };
     return (
         <div>
             <Header />
             <center>
                 <h2>Registration Form</h2>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <table>
                         <tr>
-                            <td><h3>First Name</h3><input type='text' /></td>
-                            <td><h3>Last Name</h3><input type='text' /></td>
-                            <td><h3>Mob. No.</h3><input type='number' /></td>
-                            <td><h3>Adhar No.</h3><input type='number' /></td>
-                            <td><h3>Select Course ID</h3><select>
+                            <td><h3>First Name</h3><input type='text' name="fname" onChange={handleChange} value={formData.fname} /></td>
+                            <td><h3>Last Name</h3><input type='text' name="lname" onChange={handleChange} value={formData.lname} /></td>
+                            <td><h3>Mob. No.</h3><input type='number' name="mob" onChange={handleChange} value={formData.mob} /></td>
+                            <td><h3>Adhar No.</h3><input type='number' name="adhar" onChange={handleChange} value={formData.adhar} /></td>
+                            <td><h3>Select Course ID</h3><select name="courseid" onChange={handleChange} value={formData.courseid}>
                                 <option>course ID</option>
                                 <option><li>01FWD:Full Stack Web Development</li></option>
                                 <option><li>02PHP:Hypertext Preprocessor</li></option>
@@ -25,19 +62,19 @@ export default function Register() {
                         <tr>
                             <td><h2>Educational <br></br>Qualification</h2></td>
                             <td><h3>High School</h3></td>
-                            <td><h4>School Name</h4><input type='text' /></td>
-                            <td><h4>Board Name</h4><input type='text' /></td>
-                            <td><h4>Select Passout Date</h4><input type='date' /></td>
+                            <td><h4>School Name</h4><input type='text' name="schoolname" onChange={handleChange} value={formData.schoolname} /></td>
+                            <td><h4>Board Name</h4><input type='text' name="schoolboard" onChange={handleChange} value={formData.schoolboard} /></td>
+                            <td><h4>Select Passout Date</h4><input type='date' name="schoolpass" onChange={handleChange} value={formData.schoolpass} /></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td><h3>Graduation</h3></td>
-                            <td> <h4>Institute Name</h4><input type='text' /></td>
-                            <td> <h4>Course Name</h4><input type='text' /></td>
-                            <td><h4>Select Passout Date</h4><input type='date' /></td>
+                            <td> <h4>Institute Name</h4><input type='text' name="institutename" onChange={handleChange} value={formData.institutename} /></td>
+                            <td> <h4>Course Name</h4><input type='text' name="institutecourse" onChange={handleChange} value={formData.institutecourse} /></td>
+                            <td><h4>Select Passout Date</h4><input type='date' name="institutepass" onChange={handleChange} value={formData.institutepass} /></td>
                         </tr>
                     </table>
-                    <input type='submit' className='regBtn'></input>
+                    <button type="submit"> register</button>
                 </form>
             </center>
         </div>

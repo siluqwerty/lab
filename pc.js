@@ -43,7 +43,7 @@ export default function Pc() {
               <td><input type='text' /></td>
             </tr>
             <tr>
-              <td> <h4>Student ID</h4></td>
+              <td> <h4>UPTEC ID</h4></td>
               <td><input type='text' /></td>
             </tr>
             <tr>
