@@ -1,39 +1,19 @@
 
-import React, { useState } from 'react';
+
 import Header from './Header';
 
 
 
 export default function Pc() {
 
-  const [systemInfo, setSystemInfo] = useState(null);
-
-  const getSystemInfo = () => {
-    const info = {
-      userAgent: navigator.userAgent,
-      platform: navigator.platform,
-      language: navigator.language,
-      onlineStatus: navigator.onLine ? "Online" : "Offline"
-    };
-    setSystemInfo(info);
-  };
 
   return (
     <div>
       <Header />
       <div className='pcContainer'>
         <div className='div1'>
-          <center> <button className='infoBtn' onClick={getSystemInfo}>Show System Info</button></center>
-          {systemInfo && (
-            <div>
-              <center>
-                <p><strong>User Agent:</strong> {systemInfo.userAgent}</p>
-                <p><strong>Platform:</strong> {systemInfo.platform}</p>
-                <p><strong>Language:</strong> {systemInfo.language}</p>
-                <p><strong>Online Status:</strong> {systemInfo.onlineStatus}</p>
-              </center>
-            </div>
-          )}
+          <center> <button className='infoBtn'>Profile</button></center>
+
         </div>
         <div className='div2'>
           <center> <h3>Booking Slots</h3></center>

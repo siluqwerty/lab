@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
     const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ export default function Register() {
             [name]: value,
         }));
     };
-
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -33,6 +34,9 @@ export default function Register() {
             .then((response) => {
                 if (response.status === 200) {
                     console.log('User signed up successfully');
+                    alert('you are now a regitered user of uptec. please remember your password');
+                    navigate('/');
+
                 }
             })
             .catch((error) => {
@@ -47,11 +51,11 @@ export default function Register() {
                 <form onSubmit={handleSubmit}>
                     <table>
                         <tr>
-                            <td><h3> Name</h3><input type='text' name="name" onChange={handleChange} value={formData.name} /></td>
-                            <td><h3>Set Password</h3><input type='text' name="password" onChange={handleChange} value={formData.password} /></td>
-                            <td><h3>Mob. No.</h3><input type='number' name="mob" onChange={handleChange} value={formData.mob} /></td>
-                            <td><h3>Adhar No.</h3><input type='number' name="adhar" onChange={handleChange} value={formData.adhar} /></td>
-                            <td><h3>Select Course ID</h3><select name="courseid" onChange={handleChange} value={formData.courseid}>
+                            <td><h3> Name</h3><input type='text' name="name" onChange={handleChange} value={formData.name} required /></td>
+                            <td><h3>Set Password</h3><input type='text' name="password" onChange={handleChange} value={formData.password} required /></td>
+                            <td><h3>Mob. No.</h3><input type='number' name="mob" onChange={handleChange} value={formData.mob} required /></td>
+                            <td><h3>Adhar No.</h3><input type='number' name="adhar" onChange={handleChange} value={formData.adhar} required /></td>
+                            <td><h3>Select Course ID</h3><select name="courseid" onChange={handleChange} value={formData.courseid} required >
                                 <option>course ID</option>
                                 <option><li>01FWD:Full Stack Web Development</li></option>
                                 <option><li>02PHP:Hypertext Preprocessor</li></option>
@@ -62,9 +66,9 @@ export default function Register() {
                         <tr>
                             <td><h2>Educational <br></br>Qualification</h2></td>
                             <td><h3>High School</h3></td>
-                            <td><h4>School Name</h4><input type='text' name="schoolname" onChange={handleChange} value={formData.schoolname} /></td>
-                            <td><h4>Board Name</h4><input type='text' name="schoolboard" onChange={handleChange} value={formData.schoolboard} /></td>
-                            <td><h4>Select Passout Date</h4><input type='date' name="schoolpass" onChange={handleChange} value={formData.schoolpass} /></td>
+                            <td><h4>School Name</h4><input type='text' name="schoolname" onChange={handleChange} value={formData.schoolname} required /></td>
+                            <td><h4>Board Name</h4><input type='text' name="schoolboard" onChange={handleChange} value={formData.schoolboard} required /></td>
+                            <td><h4>Select Passout Date</h4><input type='date' name="schoolpass" onChange={handleChange} value={formData.schoolpass} required /></td>
                         </tr>
                         <tr>
                             <td></td>

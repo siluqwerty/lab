@@ -68,7 +68,7 @@ body {
 .homeHeading {
     font-weight: bold;
     font-size: 30px;
-    margin-top: 10px;
+    margin: 50px;
     text-shadow: 10px 10px 5px black;
 
 
@@ -411,4 +411,16 @@ a {
 textarea {
     border: 3px solid rgb(27, 4, 233);
     border-radius: 20px;
+}
+
+.pcname {
+    margin: 0%;
+}
+
+h4 {
+    margin: 10%;
+}
+
+.exm {
+    margin: 20px;
 }

@@ -15,7 +15,7 @@ export default function Login() {
     })
       .then((response) => {
         if (response.data === 'Login successful') {
-          alert('Login successful');
+
           navigate('/home');
         } else {
           alert('Invalid credentials');
