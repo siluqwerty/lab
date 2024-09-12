@@ -21,7 +21,7 @@ export default function Homepage() {
   return (
     <div>
       <Header />
-      <button className='dashBtn' onClick={dashboard}>Go To Dashboard</button>
+      <button className='dashBtn' onClick={dashboard}>ADMIN Dashboard</button>
       <center> <h3 className='homeHeading'>Select lab to manage</h3></center>
       <div className='container'>
         <button className='labBtn' onClick={lab1}><div className='doorplate'><h2 className='labnumb'>Lab 1</h2></div><div className='nophone'></div></button>
