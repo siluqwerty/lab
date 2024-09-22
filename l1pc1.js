@@ -2,9 +2,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
 
-
-
 export default function Pc() {
+
+  // State for the booking form
   const [formData, setFormData] = useState({
     pcname: '',
     name: '',
@@ -27,14 +27,25 @@ export default function Pc() {
     axios.post('http://localhost:5000/bookedpc', formData)
       .then((response) => {
         if (response.status === 200) {
-          console.log('pc booked');
-          alert('your uptec pc and class is booked, be on time to attend the class');
+          console.log('PC booked');
+          alert('Your UPTEC PC and class is booked. Be on time to attend the class.');
+
+          // Clear form fields after successful submission
+          setFormData({
+            pcname: '',
+            name: '',
+            uptecid: '',
+            time: '',
+            date: ''
+          });
         }
       })
       .catch((error) => {
         console.error('Error during booking:', error.response ? error.response.data : error.message);
       });
   };
+
+  // State for the maintenance report form
   const [formData1, setFormData1] = useState({
     problem: '',
     details: ''
@@ -54,8 +65,14 @@ export default function Pc() {
     axios.post('http://localhost:5000/report', formData1)
       .then((response) => {
         if (response.status === 200) {
-          console.log('report sended');
-          alert('your report has been submitted');
+          console.log('Report submitted');
+          alert('Your report has been submitted.');
+
+          // Clear form fields after successful submission
+          setFormData1({
+            problem: '',
+            details: ''
+          });
         }
       })
       .catch((error) => {
@@ -70,7 +87,6 @@ export default function Pc() {
       <div className='pcContainer'>
         <div className='div1'>
           <center> <button className='infoBtn'>Profile</button></center>
-
         </div>
         <div className='div2'>
           <center> <h3>Booking Slots</h3></center>
@@ -110,16 +126,18 @@ export default function Pc() {
         </div>
         <div className='div3'>
           <center>
-            <h3>Report Maintanence</h3>
+            <h3>Report Maintenance</h3>
             <form onSubmit={handleSubmit1}>
-              <h4 className='exm'>Problem type <br></br> Hardwarwe/Software</h4><input type='text' name="problem" onChange={handleChange1} value={formData.problem} required ></input>
-              <h4 className='exm'>Mention details</h4><textarea cols={40} rows={5} name="details" onChange={handleChange1} value={formData.details} required />
-              <br></br>
+              <h4 className='exm'>Problem type <br /> Hardware/Software</h4>
+              <input type='text' name="problem" onChange={handleChange1} value={formData1.problem} required />
+              <h4 className='exm'>Mention details</h4>
+              <textarea cols={40} rows={5} name="details" onChange={handleChange1} value={formData1.details} required />
+              <br />
               <button type='submit'>Report</button>
             </form>
           </center>
         </div>
       </div>
-    </div >
-  )
+    </div>
+  );
 }

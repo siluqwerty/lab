@@ -4,9 +4,20 @@ import uptec from './uptec.png';
 import axios from 'axios';
 
 export default function Login() {
-  const [name, setName] = useState();
-  const [password, setPassword] = useState();
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+  const handleclick = () => {
+    const password =
+      prompt("enter admin password");
+    if (password === "123") {
+      navigate('/Dashboard');
+    }
+    else {
+      alert('incorrect password');
+    }
+  }
   const Loginset = (e) => {
     e.preventDefault();
     axios.post('http://localhost:5000/login', {
@@ -23,17 +34,18 @@ export default function Login() {
       })
       .catch((error) => {
         console.error('Error:', error);
-        alert('Error during login. Please try again.');
+        alert('wrong password or name');
       });
   };
-  const registernav = () => {
+  const registernav = (e) => {
+    e.preventDefault();
     navigate('/register');
   }
 
   return (
     <div>
       <div className="body1">
-
+        <center><button className='dashBtn' onClick={handleclick}>ADMIN Dashboard</button></center>
       </div>
       <div className="body2">
         <div className="head1">
@@ -61,7 +73,7 @@ export default function Login() {
               </tr>
               <tr>
                 <th><button className="login" onClick={Loginset}>LOGIN</button></th>
-                <th align='right'><button className='regbtn' onClick={registernav}>REGISTER</button></th>
+                <th align='right'><button className='themeBtn' onClick={registernav} >REGISTER</button></th>
               </tr>
             </table>
 

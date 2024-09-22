@@ -2,6 +2,7 @@ import Header from './Header';
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 export default function Dashboard() {
     const [data, setData] = useState([]);
     const [data1, setData1] = useState([]);
@@ -43,79 +44,84 @@ export default function Dashboard() {
     return (
         <div>
             <Header />
-            <div className='pcContainer'>
-                <div className='div1'>
-                    <button onClick={fetchStudentData}>Student Data</button>
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Contact</th>
-                                <th>Adhar no.</th>
-                                <th>Course</th>
-                                <th>School</th>
-                                <th>College</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.map((item) => (
-                                <tr key={item.id}>
-                                    <td>{item.name}</td>
-                                    <td>{item.mobile_no}</td>
-                                    <td>{item.aadhar_no}</td>
-                                    <td>{item.course_id}</td>
-                                    <td>{item.high_school_name}</td>
-                                    <td>{item.graduation_institute}</td>
+            <div>
+                <div>
+                    <center><button className="button-36" onClick={fetchStudentData}>Student Data</button>
+                        <table className='styled-table'>
+                            <thead>
+                                <tr className='active-row'>
+                                    <th>Name</th>
+                                    <th>Contact</th>
+                                    <th>Adhar no.</th>
+                                    <th>Course</th>
+                                    <th>School</th>
+                                    <th>College</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {data.map((item) => (
+                                    <tr key={item.id}>
+                                        <td>{item.name}</td>
+                                        <td>{item.mobile_no}</td>
+                                        <td>{item.aadhar_no}</td>
+                                        <td>{item.course_id}</td>
+                                        <td>{item.high_school_name}</td>
+                                        <td>{item.graduation_institute}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </center>
                 </div>
 
-                <div className='div2'>
-                    <button onClick={fetchBookedPCData}>List of Booked PC</button>
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>PC Name</th>
-                                <th>Booked by</th>
-                                <th>Uptec ID</th>
-                                <th>Booked Time Slot</th>
-                                <th>Booked for Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data1.map((item) => (
-                                <tr key={item.id}>
-                                    <td>{item.pc_name}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.uptec_id}</td>
-                                    <td>{item.time}</td>
-                                    <td>{item.date}</td>
+                <div>
+                    <center> <button className="button-36" onClick={fetchBookedPCData}>List of Booked PC</button>
+                        <table className='styled-table'>
+                            <thead>
+                                <tr className='active-row'>
+                                    <th>PC Name</th>
+                                    <th>Booked by</th>
+                                    <th>Uptec ID</th>
+                                    <th>Booked Time Slot</th>
+                                    <th>Booked for Date</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {data1.map((item) => (
+                                    <tr key={item.id}>
+                                        <td>{item.pc_name}</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.uptec_id}</td>
+                                        <td>{item.time}</td>
+                                        <td>{item.date}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </center>
                 </div>
 
-                <div className='div3'>
-                    <button onClick={fetchMaintenanceData}>Check Maintenance</button>
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Problem Type</th>
-                                <th>Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data2.map((item) => (
-                                <tr key={item.id}>
-                                    <td>{item.problem_type}</td>
-                                    <td>{item.details}</td>
+                <div>
+                    <center> <button className="button-36" onClick={fetchMaintenanceData}>Check Maintenance</button>
+                        <table className='styled-table'>
+                            <thead>
+                                <tr className='active-row'>
+                                    <th>Problem Type</th>
+                                    <th>Details</th>
+                                    <th>PC Name</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {data2.map((item) => (
+                                    <tr key={item.id}>
+                                        <td>{item.problem_type}</td>
+                                        <td>{item.details}</td>
+                                        <td>{item.pc_name}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </center>
                 </div>
             </div>
         </div>

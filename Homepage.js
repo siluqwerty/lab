@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Homepage() {
   const navigate = useNavigate();
+
   const lab1 = () => {
     navigate('/lab1');
   }
@@ -15,13 +16,11 @@ export default function Homepage() {
   const lab3 = () => {
     navigate('/lab3');
   }
-  const dashboard = () => {
-    navigate('/Dashboard');
-  }
+
   return (
     <div>
       <Header />
-      <button className='dashBtn' onClick={dashboard}>ADMIN Dashboard</button>
+
       <center> <h3 className='homeHeading'>Select lab to manage</h3></center>
       <div className='container'>
         <button className='labBtn' onClick={lab1}><div className='doorplate'><h2 className='labnumb'>Lab 1</h2></div><div className='nophone'></div></button>
@@ -29,6 +28,12 @@ export default function Homepage() {
         <button className='labBtn' onClick={lab3}><div className='doorplate'><h2 className='labnumb'>Lab 3</h2></div><div className='nophone'></div></button>
 
       </div>
-    </div>
+      <div className='profcontain'>
+        <div><button className='prof'>Profile</button>
+        </div>
+        <div> <button className='uprof'>Update Profile</button>
+        </div>
+      </div>
+    </div >
   );
 }

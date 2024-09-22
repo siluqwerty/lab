@@ -78,7 +78,7 @@ export default function Register() {
                             <td><h4>Select Passout Date</h4><input type='date' name="institutepass" onChange={handleChange} value={formData.institutepass} /></td>
                         </tr>
                     </table>
-                    <button type="submit"> register</button>
+                    <button className='themeBtn' type="submit"> REGISTER</button>
                 </form>
             </center>
         </div>
